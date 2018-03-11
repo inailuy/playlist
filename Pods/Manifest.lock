@@ -1,0 +1,12 @@
+PODS:
+  - SpotifyLogin (0.1.6)
+
+DEPENDENCIES:
+  - SpotifyLogin (~> 0.1)
+
+SPEC CHECKSUMS:
+  SpotifyLogin: 9cdf82ff13e5f37e5ddc7fd07cf9793a9ebd1124
+
+PODFILE CHECKSUM: fd44f0c134f42f95f41139ae3a660665ad031d18
+
+COCOAPODS: 1.3.1
