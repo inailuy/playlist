@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/SpotifyLogin/Sources/SpotifyLogin.swift"
-            timestampString = "542503523.929665"
+            filePath = "Playlist/SpotifyAPI.swift"
+            timestampString = "542507962.846857"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "applicationOpenURL(_:completion:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "grabPlaylist()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

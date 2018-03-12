@@ -42,6 +42,9 @@ class ViewController: UIViewController {
             }
         }
         print(SpotifyLogin.shared.username ?? "nil username")
+        
+        let s = SpotifyAPI()
+        s.grabPlaylist()
     }
     
     @objc func loginSuccessful() {

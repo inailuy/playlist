@@ -18,7 +18,6 @@ let kCallbackURL = "spotifyOnWatch://"
 
 let kSessionUserDefaultsKey = "SpotifyPlaylist"
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -25,6 +25,10 @@ public class SpotifyLogin {
     public var username: String? {
         return session?.username
     }
+    
+    public var authToken:String? {
+        return session?.accessToken
+    }
 
     private var clientID: String?
     private var clientSecret: String?
@@ -105,7 +109,6 @@ public class SpotifyLogin {
     ///   - completion: Returns an optional error or nil if successful.
     /// - Returns: Whether or not the URL was handled.
     public func applicationOpenURL(_ url: URL, completion: @escaping (Error?) -> Void) -> Bool {
-       
         guard let urlBuilder = urlBuilder,
             let redirectURL = redirectURL,
             let clientID = clientID,

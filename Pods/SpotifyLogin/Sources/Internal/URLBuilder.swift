@@ -77,7 +77,7 @@ internal class URLBuilder {
     }
 
     internal func canHandleURL(_ url: URL) -> Bool {
-        let redirectURLString = redirectURL.absoluteString.lowercased()
+        let redirectURLString = redirectURL.absoluteString
         return url.absoluteString.hasPrefix(redirectURLString)
     }
 
