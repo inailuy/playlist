@@ -15,6 +15,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        handleSpotifyLogin()
+        
+        let s = SpotifyAPI()
+        s.grabPlaylist(completionHandler: { data in
+            print(data)
+        })
+    }
+    
+    func handleSpotifyLogin() {
         // Notify if login is succesful after luanching login flow
         NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessful), name: .SpotifyLoginSuccessful, object: nil)
         
@@ -42,9 +52,6 @@ class ViewController: UIViewController {
             }
         }
         print(SpotifyLogin.shared.username ?? "nil username")
-        
-        let s = SpotifyAPI()
-        s.grabPlaylist()
     }
     
     @objc func loginSuccessful() {

@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		10800653B695E0F2D1C7A464 /* Pods_Playlist_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A76558DFD9F45B187D426B /* Pods_Playlist_WatchKit_App.framework */; };
 		1AFF004D909474EEB630ECA2 /* Pods_Playlist_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BD5758C689171EB221FADD /* Pods_Playlist_WatchKit_Extension.framework */; };
+		3A4161CB205DD46400EC512E /* PlaylistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4161CA205DD46300EC512E /* PlaylistVC.swift */; };
+		3A4161CD205DD48200EC512E /* PlaylistVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4161CC205DD48200EC512E /* PlaylistVM.swift */; };
 		3A828FC02055D355003320B9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A828FBF2055D355003320B9 /* AVFoundation.framework */; };
 		3A828FC22055D38F003320B9 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A828FC12055D38F003320B9 /* SafariServices.framework */; };
 		3A828FC42055D397003320B9 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A828FC32055D397003320B9 /* WebKit.framework */; };
 		3A828FC62055D3A3003320B9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A828FC52055D3A2003320B9 /* Security.framework */; };
 		3A828FCB2055FA62003320B9 /* SpotifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A828FCA2055FA62003320B9 /* SpotifyAPI.swift */; };
+		3A828FD3205770B8003320B9 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A828FD0205756D0003320B9 /* Playlist.swift */; };
 		3A89E5572055CC7800C0A65D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A89E5562055CC7800C0A65D /* AppDelegate.swift */; };
 		3A89E5592055CC7800C0A65D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A89E5582055CC7800C0A65D /* ViewController.swift */; };
 		3A89E55C2055CC7800C0A65D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A89E55A2055CC7800C0A65D /* Main.storyboard */; };
@@ -72,6 +75,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A4161CA205DD46300EC512E /* PlaylistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistVC.swift; sourceTree = "<group>"; };
+		3A4161CC205DD48200EC512E /* PlaylistVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistVM.swift; sourceTree = "<group>"; };
 		3A828FBF2055D355003320B9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3A828FC12055D38F003320B9 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		3A828FC32055D397003320B9 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -79,6 +84,7 @@
 		3A828FC72055D456003320B9 /* Playlist WatchKit App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Playlist WatchKit App-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A828FCA2055FA62003320B9 /* SpotifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyAPI.swift; sourceTree = "<group>"; };
 		3A828FCE2055FE0C003320B9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A828FD0205756D0003320B9 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		3A89E5532055CC7800C0A65D /* Playlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Playlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A89E5562055CC7800C0A65D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A89E5582055CC7800C0A65D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +144,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A828FCF205756B7003320B9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A828FD0205756D0003320B9 /* Playlist.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		3A89E54A2055CC7800C0A65D = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +179,10 @@
 			children = (
 				3A89E5562055CC7800C0A65D /* AppDelegate.swift */,
 				3A89E5582055CC7800C0A65D /* ViewController.swift */,
+				3A4161CA205DD46300EC512E /* PlaylistVC.swift */,
+				3A4161CC205DD48200EC512E /* PlaylistVM.swift */,
 				3A828FCA2055FA62003320B9 /* SpotifyAPI.swift */,
+				3A828FCF205756B7003320B9 /* Models */,
 				3A89E55A2055CC7800C0A65D /* Main.storyboard */,
 				3A89E55D2055CC7800C0A65D /* Assets.xcassets */,
 				3A89E55F2055CC7800C0A65D /* LaunchScreen.storyboard */,
@@ -440,11 +457,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Playlist/Pods-Playlist-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SpotifyLogin/SpotifyLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpotifyLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -508,7 +527,10 @@
 			files = (
 				3A828FCB2055FA62003320B9 /* SpotifyAPI.swift in Sources */,
 				3A89E5592055CC7800C0A65D /* ViewController.swift in Sources */,
+				3A4161CD205DD48200EC512E /* PlaylistVM.swift in Sources */,
 				3A89E5572055CC7800C0A65D /* AppDelegate.swift in Sources */,
+				3A4161CB205DD46400EC512E /* PlaylistVC.swift in Sources */,
+				3A828FD3205770B8003320B9 /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +700,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8YR4WT3S5;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Playlist WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yulz.Playlist.watchkitapp.watchkitextension;
@@ -697,6 +720,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K8YR4WT3S5;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Playlist WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yulz.Playlist.watchkitapp.watchkitextension;

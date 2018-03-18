@@ -14,21 +14,23 @@ let apiUrl = "api.spotify.com"
 let playlistPath = "/v1/me/playlists"
 
 class SpotifyAPI {
+    typealias CompletionHandler = (_ data:Data) -> Void
     
-    func grabPlaylist() {
+    func grabPlaylist(completionHandler: @escaping CompletionHandler) {
         guard let auth = SpotifyLogin.shared.authToken else {
             print("wrong")
             return
         }
         
         let url = self.createURLWithComponents(path: playlistPath)
-        let headers: HTTPHeaders = [
-            "Authorization": "Bearer \(auth)",
-            "Accept": "application/json"
-        ]
+        let headers: HTTPHeaders = self.createHeader(auth: auth)
         
         Alamofire.request(url!, headers: headers).responseJSON { response in
-            debugPrint(response.result)
+            guard let data = response.data else {
+                fatalError("error on response")
+            }
+            
+            completionHandler(data)
         }
     }
     
@@ -40,5 +42,11 @@ class SpotifyAPI {
         
         return urlComponents.url!
     }
+    
+    func createHeader(auth:String ) -> HTTPHeaders {
+        return [
+            "Authorization": "Bearer \(auth)",
+            "Accept": "application/json"
+        ]
+    }
 }
-
