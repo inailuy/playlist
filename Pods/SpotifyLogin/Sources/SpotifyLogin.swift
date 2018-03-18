@@ -25,10 +25,6 @@ public class SpotifyLogin {
     public var username: String? {
         return session?.username
     }
-    
-    public var authToken:String? {
-        return session?.accessToken
-    }
 
     private var clientID: String?
     private var clientSecret: String?
@@ -61,6 +57,10 @@ public class SpotifyLogin {
         self.clientSecret = clientSecret
         self.redirectURL = redirectURL
         self.urlBuilder = URLBuilder(clientID: clientID, clientSecret: clientSecret, redirectURL: redirectURL)
+    }
+    
+    public var authToken:String! {
+        return session!.accessToken
     }
 
     /// Asynchronous call to retrieve the session's auth token. Automatically refreshes if auth token expired. 

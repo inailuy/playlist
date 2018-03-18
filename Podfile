@@ -9,7 +9,6 @@ target 'Playlist' do
 source 'https://github.com/CocoaPods/Specs.git'
 pod 'SpotifyLogin', '~> 0.1'
 pod 'Alamofire', '~> 4.7'
-pod 'SwiftyJSON'
 
 end
 
